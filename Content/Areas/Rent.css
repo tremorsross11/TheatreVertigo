@@ -1,0 +1,153 @@
+﻿/* ▼ This ▼ is for you to easily reference the colors on the Site.css page */
+/* Do not uncomment these color variables */
+
+/* CSS color variables */
+/*:root {*/ /* Color palette for css */
+/*--main-color: #BD1A11;*/ /* Red */
+/*--main-color--light: #F04D44;*/ /* Red, a shade lighter */
+/*--secondary-color: #D6972A;*/ /* Yellow gold */
+/*--light-color: #FFFBFB;*/ /* White */
+/*--dark-color: #000000;*/ /* Black */
+/*--secondary-color--dark: #9D7C39;*/ /* Dark Gold */
+/*--light-blue: rgb(93, 123, 244)*/ /*Light Blue - Added color on top of original*/
+/*}*/
+
+
+
+
+/* Style Rental History CREATE form */
+
+/* Style heading */
+h2 {
+    text-align: center;
+}
+
+.rental-create--form-horizontal {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap:10px;
+    background-color: var(--main-color--light);
+    border-radius: 5px;
+    margin: auto;
+    max-width: 600px;
+}
+
+/* Separate styling container for buttons */
+.rental-create--form-group-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: baseline;
+}
+
+/* Individual button styling */
+.rental-create--btncreate {
+    text-align: center;
+    color: var(--light-color);
+    border: none;
+    display: inline-block;
+    border-radius: 5px;
+    width: 150px;
+    padding: 5px;
+}
+
+.rental-create--btnback {
+    text-align: center;
+    color: var(--light-color);
+    border: none;
+    display: inline-block;
+    border-radius: 5px;
+    width: 150px;
+    padding: 10px;
+}
+
+.control-label{
+     max-width: 600px;
+}
+
+#damages-incurred{
+    display: none;
+}
+
+
+/* Style Rental History EDIT form */
+
+/* Style heading */
+h2 {
+    text-align: center;
+}
+
+.rental-edit--form-horizontal {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 10px;
+    background-color: var(--main-color--light);
+    border-radius: 5px;
+    margin: auto;
+    max-width: 600px;
+}
+
+/* Separate styling container for buttons */
+.rental-edit--form-group-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: baseline;
+}
+
+/* Individual button styling */
+.rental-edit--btnedit {
+    text-align: center;
+    color: var(--light-color);
+    border: none;
+    display: inline-block;
+    border-radius: 5px;
+    width: 150px;
+    padding: 5px;
+}
+
+.rental-create--btnback {
+    text-align: center;
+    color: var(--light-color);
+    border: none;
+    display: inline-block;
+    border-radius: 5px;
+    width: 150px;
+    padding: 10px;
+}
+
+/* Style Rental History INDEX form */
+
+.rental-index--form-horizontal {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 10px;
+    background-color: var(--light-color);
+    border-radius: 10px;
+    border: solid;
+    border-color: var(--main-color);
+    margin: auto;
+    color: var(--dark-color);
+}
+
+#rental-index--redicon{
+    color: red;
+}
+
+#rental-index--greenicon{
+    color: green;
+}
+
+.rental-index--firstrow{
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+}

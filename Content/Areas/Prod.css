@@ -1,0 +1,251 @@
+﻿/* ▼ This ▼ is for you to easily reference the colors on the Site.css page */
+/* Do not uncomment these color variables */
+
+/* CSS color variables */
+/*:root {*/ /* Color palette for css */
+/*--main-color: #BD1A11;*/ /* Red */
+/*--main-color--light: #F04D44;*/ /* Red, a shade lighter */
+/*--secondary-color: #D6972A;*/ /* Yellow gold */
+/*--light-color: #FFFBFB;*/ /* White */
+/*--dark-color: #000000;*/ /* Black */
+/*--secondary-color--dark: #9D7C39;*/ /* Dark Gold */
+/*--light-blue: rgb(93, 123, 244)*/ /*Light Blue - Added color on top of original*/
+/*}*/
+
+.ProductionPhotos-CreateEdit-BackBtn {
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    border-radius: 7px;
+    display: inline-block;
+    height: 40px;
+    width: 100px;
+    text-align: center;
+    transition-duration: .4s;
+    padding-top: 7px;
+    margin-top: 10px;
+}
+
+    .ProductionPhotos-CreateEdit-BackBtn:hover {
+        background-color: var(--light-color);
+        color: var(--main-color);
+    }
+
+.ProductionPhotos-CreateEdit-SubmitBtn {
+    background-color: var(--secondary-color);
+    color: var(--light-color);
+    border-radius: 7px;
+    height: 40px;
+    width: 100px;
+    text-align: center;
+    transition-duration: .4s;
+    display: inline-block;
+}
+
+    .ProductionPhotos-CreateEdit-SubmitBtn:hover {
+        background-color: var(--light-color);
+        color: var(--secondary-color)
+    }
+
+.ProdPhotos-CreateEdit-File {
+    flex-direction: column;
+    display: flex;
+    align-content: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    background-color: var(--main-color);
+}
+
+@media screen and (max-width: 550px) {
+    .ProdPhotos-CreateEdit-File {
+        flex-direction: column;
+        background-color: black;
+    }
+}
+
+.ProductionPhotos-CreateEdit-Container {
+    background-color: var(--main-color);
+}
+/**************************************************
+    CAST MEMBER CREATE PAGE FORMATTING
+**************************************************/
+
+.castMember-Create--form {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: var(--secondary-color--dark);
+    border-radius: 10px;
+    width: 75%;
+}
+
+.castMember-Create--create-btn {
+    color: var(--light-color);
+    background-color: var(--main-color);
+    border-color: var(--main-color);
+}
+
+    .castMember-Create--create-btn:hover {
+        color: var(--light-color);
+        background-color: var(--main-color--light);
+        border-color: var(--main-color--light);
+    }
+
+.castMember-Create--back-btn {
+    color: var(--light-color);
+    background-color: var(--dark-color);
+    border-color: var(--dark-color);
+}
+
+    .castMember-Create--back-btn:hover {
+        color: var(--light-color);
+        background-color: rgb(50, 50, 50);
+        border-color: rgb(50, 50, 50);
+    }
+
+.castMember-Create--buttonoutline:focus {
+    border-color: var(--main-color);
+    outline: 0;
+    box-shadow: 0 0 0 0;
+}
+
+.castMember-Create--outline:focus {
+    color: var(--light-color);
+    background-color: var(--dark-color);
+    border-color: var(--main-color);
+    outline: 0;
+    box-shadow: 0 0 0 0;
+}
+
+.castMember-Create--outline:hover {
+    border-color: var(--main-color);
+}
+
+/**************************************************
+    CAST MEMBER EDIT PAGE FORMATTING
+**************************************************/
+
+.castMember-Edit--form {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: var(--secondary-color--dark);
+    border-radius: 10px;
+    width: 75%;
+}
+
+.castMember-Edit--save-btn {
+    color: var(--light-color);
+    background-color: var(--main-color);
+    border-color: var(--main-color);
+}
+
+    .castMember-Edit--save-btn:hover {
+        color: var(--light-color);
+        background-color: var(--main-color--light);
+        border-color: var(--main-color--light);
+    }
+
+.castMember-Edit--back-btn {
+    color: var(--light-color);
+    background-color: var(--dark-color);
+    border-color: var(--dark-color);
+}
+
+    .castMember-Edit--back-btn:hover {
+        color: var(--light-color);
+        background-color: rgb(50, 50, 50);
+        border-color: rgb(50, 50, 50);
+    }
+
+.castMember-Edit--buttonoutline:focus {
+    border-color: var(--main-color);
+    outline: 0;
+    box-shadow: 0 0 0 0;
+}
+
+.castMember-Edit--outline:focus {
+    color: var(--light-color);
+    background-color: var(--dark-color);
+    border-color: var(--main-color);
+    outline: 0;
+    box-shadow: 0 0 0 0;
+}
+
+.castMember-Edit--outline:hover {
+    border-color: var(--main-color);
+}
+
+/**************************************************
+    CAST MEMBER INDEX PAGE FORMATTING
+**************************************************/
+
+.castMember-Index--create-btn {
+    color: var(--light-color);
+    background-color: var(--main-color);
+    border-color: var(--main-color);
+}
+
+    .castMember-Index--create-btn:hover {
+        color: var(--light-color);
+        background-color: var(--main-color--light);
+        border-color: var(--main-color--light);
+    }
+
+.castMember-Index--buttonoutline:focus {
+    border-color: var(--main-color);
+    outline: 0;
+    box-shadow: 0 0 0 0;
+}
+
+.castMember-Index--card {
+    max-width: 14rem;
+    background-color: var(--dark-color);
+    box-shadow: 0px 0px 10px 3px var(--dark-color);
+}
+
+.castMember-Index--image {
+    width: 100%;
+    height: 20rem;
+    object-fit: cover;
+    cursor: pointer;
+    transition: .5s ease;
+}
+
+    .castMember-Index--image:hover {
+        filter: brightness(50%);
+    }
+
+.castMember-Index--overlaycontainer {
+    position: relative;
+    z-index: 2;
+}
+
+.castMember-Index--overlaybuttons {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    padding: 10px 10px;
+    visibility: hidden;
+    z-index: 3;
+}
+
+.castMember-Index--overlaycontainer:hover .castMember-Index--overlaybuttons {
+    visibility: visible;
+}
+
+.castMember-Index--overlaycontainer:hover .castMember-Index--image {
+    filter: brightness(50%);
+}
+
+.castMember-Index--btn {
+    padding: 0px 20px;
+    color: var(--secondary-color);
+    z-index: 4;
+/*    position: relative;  */   
+    cursor: pointer;
+}
+
+    .castMember-Index--btn:hover {
+        color: var(--main-color);
+    }
