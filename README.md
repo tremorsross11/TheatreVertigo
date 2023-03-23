@@ -1,2 +1,2 @@
 # VortexTheatre
- The code I wrote for Vortex theaters website
+ The code I wrote for Theatre Vertigos website. 
