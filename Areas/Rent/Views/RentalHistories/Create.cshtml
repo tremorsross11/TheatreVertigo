@@ -1,0 +1,61 @@
+﻿@model TheatreCMS3.Areas.Rent.Models.RentalHistory
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Create Rental History</h2>
+
+
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+<div class="rental-create--form-horizontal">
+
+    @Html.ValidationSummary(true, "Rental", new { @class = "text-danger" })
+    <div class="rental-create--form-group">
+        @Html.LabelFor(model => model.Rental, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Rental, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Rental, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="rental-create--form-group col-md-2">
+        @Html.LabelFor(model => model.RentalDamaged, "Damaged?")
+        @Html.CheckBoxFor(model => model.RentalDamaged, new { id = "damaged-checkbox", name = "damaged-checkbox" })
+        @Html.ValidationMessageFor(model => model.RentalDamaged, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="rental-create--form-group">
+        @Html.LabelFor(model => model.DamagesIncurred, "Notes", htmlAttributes: new { id = "notes", @class = "control-label col-md-2" })
+        @Html.LabelFor(model => model.DamagesIncurred, "Damages Incurred", htmlAttributes: new { id = "damages-incurred", @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.DamagesIncurred, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.DamagesIncurred, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+
+    <div class="rental-create--form-group-buttons">
+        <div class="rental-create--btnback">
+            <button class="btn btn-dark">@Html.ActionLink("Back to List", "Index")</button>
+        </div>
+        <div class="rental-create--btncreate ">
+            <input type="submit" value="Create" class="btn btn-success" />
+        </div>
+    </div>
+</div>
+}
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/Scripts/Areas/Rent.js")
+
+}

@@ -1,0 +1,110 @@
+﻿@model IEnumerable<TheatreCMS3.Areas.Rent.Models.RentalHistory>
+
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@Styles.Render("~/Content/fontawesome")
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<div class="rental-index--form-horizontal">
+    <div class="rental-index--firstrow">
+        <div>
+            Most recent Rental Histories
+        </div>
+
+        <div class="rental-index--sortdropdown">
+            @using (Html.BeginForm("Index", "RentalHistories", FormMethod.Get, new { id = "rental-index--sorting" }))
+            {
+                <div>
+                    Sort by:
+                    @Html.DropDownList("sortOrder", new SelectList(new[]
+                        {
+                           new SelectListItem { Text = "No Sorting", Value = ""},
+                           new SelectListItem { Text = "Damaged Rentals", Value = "Damaged"},
+                           new SelectListItem { Text = "Undamaged Rentals", Value = "Undamaged"},
+                           new SelectListItem { Text = "Rentals A - Z", Value = "A-Z"},
+                           new SelectListItem { Text = "Rentals Z- A", Value = "Z-A"},
+                        }, "Value", "Text", ViewBag.CurrentSort), new { onchange = "submitForm()" })
+                </div>
+            }
+        </div>
+    </div>
+
+    <table class="rental-index--table table">
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @if (item.RentalDamaged)
+                    {
+                        <i class="fa fa-times-circle" id="rental-index--redicon"></i>
+                    }
+                    else
+                    {
+                        <i class="fa fa-check-circle" id="rental-index--greenicon"></i>
+                    }
+                </td>
+
+                <td>
+                    <div>
+                        <div class="badge badge-dark rental-index--rental" id="rentalhistory-index--collapseheading-@item.RentalHistoryId"
+                             data-toggle="collapse" data-target="#rentalhistory-index--collapsecontent-@item.RentalHistoryId"
+                             aria-expanded="false" aria-controls="rentalhistory-index--collapsecontent-@item.RentalHistoryId">
+                            @Html.DisplayFor(modelItem => item.Rental)
+                        </div>
+                    </div>
+                    <div id="rentalhistory-index--collapsecontent-@item.RentalHistoryId" class="collapse">
+                        <div class="card-body">
+                            @if (item.RentalDamaged)
+                            {
+                                <div class="text-dark rental-index-rentaldamages">
+                                    @Html.DisplayFor(modelItem => item.DamagesIncurred)
+                                </div>
+                            }
+                            else
+                            {
+                                <div class="text-muted rental-index-rentalnotes">
+                                    @Html.DisplayFor(modelItem => item.DamagesIncurred)
+                                </div>
+                            }
+                        </div>
+                    </div>
+                    
+                </td>
+
+
+                <td>
+                    <div class="dropdown rental-index--cruddropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown">
+                            <i class="fa fa-ellipsis-v"></i>
+                        </button>
+                        <div class="dropdown-menu rental-index--dropdownmenu">
+                            @Html.ActionLink("Edit", "Edit", new { id = item.RentalHistoryId }, new { @class = "dropdown-item" }) |
+                            @Html.ActionLink("Details", "Details", new { id = item.RentalHistoryId }, new { @class = "dropdown-item" }) |
+                            @Html.ActionLink("Delete", "Delete", new { id = item.RentalHistoryId }, new { @class = "dropdown-item" })
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/Scripts/Areas/Rent.js")
+
+}

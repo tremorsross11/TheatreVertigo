@@ -1,0 +1,55 @@
+﻿@using TheatreCMS3.Areas.Prod.Controllers
+@model IEnumerable<TheatreCMS3.Areas.Prod.Models.CastMember>
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var productions = Model.GroupBy(x => x.ProductionTitle).OrderBy(x => x.Key);
+}
+
+
+<h2 class="pt-2 pb-2">Cast Members</h2>
+
+
+<p>
+    @Html.ActionLink("Create New", "Create", null, new { @class = "btn castMember-Index--create-btn castMember-Index--buttonoutline" })
+</p>
+
+
+@foreach (var prod in productions)
+{
+    <div>
+        <h3 class="mt-5">
+            @Html.DisplayFor(modelItem => prod.Key)
+        </h3>
+        <hr class="bg-light" />
+        <div class="row card-columns">
+            @foreach (var member in Model.Where(m => m.ProductionTitle == prod.Key))
+            {
+                <div class="col-sml-4 p-1">
+                    <div class="card m-2 castMember-Index--card">
+                        <div class="castMember-Index--overlaycontainer">
+
+                            <div class="castMember-Index--overlaybuttons text-center mt-5">
+                                <i class="fas fa-pencil fa-2x castMember-Index--btn" onclick="location.href='@Url.Action("Edit", "CastMembers", new { id = member.CastMemberID })'"></i>
+                                <i class="fas fa-trash-alt fa-2x castMember-Index--btn" onclick="location.href='@Url.Action("Delete", "CastMembers", new { id = member.CastMemberID })'"></i>
+                            </div>
+
+                            <a href="@Url.Action("Details", "CastMembers", new { id = member.CastMemberID })">
+                                <img src="@CastMembersController.ImageSource(member.Photo)" class="card-img-top castMember-Index--image" alt="@member.CastMemberID">
+                            </a>
+
+                            <div class="card-body bg-dark">
+                                <h5 class="card-title text-center font-weight-bold">@member.Name </h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+}
+
+
+
